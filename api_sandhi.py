@@ -2,6 +2,7 @@ import requests
 import re
 import tqdm
 import sandhi
+import pandas as pd
 
 # global sandhi object
 S = sandhi.Sandhi() 
@@ -150,7 +151,6 @@ def raw_text_processor():
 
 def csv_processor(file_path, output_path, col_number):
     ##### From excel sheet ############
-    import pandas as pd
     # Load the .xlsx file
     # file_path = '/Users/pragunamanvi/Downloads/rjm2.xlsx'
     df = pd.read_excel(file_path)
@@ -182,7 +182,7 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description="Write the first 100 rows of a DataFrame to a new Excel file.")
 
-    parser.add_argument('--input_file', type=str, help="Path to the input Excel file")
+    parser.add_argument('--input_file', type=str, help="Path to the input Excel file", required=True)
     parser.add_argument('--output_path', nargs='?', type=str, help="Path to the output csv file", default="/Users/pragunamanvi/Downloads/jata.csv")
     parser.add_argument('--col_number', nargs='?', type=int, help="Column number for Jata (default 3)", default=4)
 
