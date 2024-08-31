@@ -175,7 +175,7 @@ def csv_processor(file_path, output_path, col_number):
     df['sandhi'] = new_column_values
     # Save the modified DataFrame to a new Excel file
     new_file_path = output_path
-    df.to_csv(new_file_path, index=False)
+    df.to_csv(new_file_path, index=False, encoding="utf-8")
     print(f"New file saved as: {new_file_path}")
 
 def main():
