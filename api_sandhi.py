@@ -193,3 +193,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    # python api_sandhi.py --input_file /Users/pragunamanvi/Downloads/rjm8.xlsx --col_number 1
