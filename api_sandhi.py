@@ -167,6 +167,8 @@ def csv_processor(file_path, output_path, col_number):
                 assert len(units) == 1
                 new_column_values.append(merge_words_depth(units[0]))
             except Exception as e:
+                if pd.isna(original_value): 
+                    original_value = ""
                 f.write(original_value + "\n")
                 new_column_values.append(original_value + " -B-")
                 f.flush() 
